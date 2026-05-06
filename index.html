@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abhishek Aloor Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#081225;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:20px 8%;
+    background:#0b1324;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #1b2b45;
+}
+
+nav h1{
+    color:#22d3ee;
+    font-size:40px;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#22d3ee;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:140px 8%;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h3{
+    color:#22d3ee;
+    letter-spacing:3px;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.hero-text h1{
+    font-size:90px;
+    line-height:1.1;
+    margin-bottom:30px;
+}
+
+.hero-text p{
+    color:#d1d5db;
+    font-size:24px;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 35px;
+    background:#22d3ee;
+    color:black;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:22px;
+    font-weight:bold;
+    margin-right:20px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.btn2{
+    background:transparent;
+    border:2px solid #22d3ee;
+    color:#22d3ee;
+}
+
+/* PROFILE CARD */
+
+.profile-card{
+    width:420px;
+    background:#0d162b;
+    border-radius:25px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0px 0px 30px rgba(0,0,0,0.5);
+}
+
+.circle{
+    width:250px;
+    height:250px;
+    overflow:hidden;
+    margin:auto;
+    border:5px solid #22d3ee;
+    border-radius:20px;
+}
+
+.circle img{
+    width:100%;
+    height:150%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+.name{
+    font-size:55px;
+    color:#22d3ee;
+    margin-top:25px;
+    margin-bottom:15px;
+    line-height:1.2;
+}
+
+.role{
+    color:#22d3ee;
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.desc{
+    color:#d1d5db;
+    line-height:1.8;
+    font-size:22px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:55px;
+    color:#22d3ee;
+    margin-bottom:60px;
+}
+
+/* ABOUT */
+
+.about p{
+    text-align:center;
+    font-size:24px;
+    color:#d1d5db;
+    line-height:2;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* SKILLS */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.skill{
+    background:#0d162b;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    border:1px solid #1b2b45;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:translateY(-8px);
+    border-color:#22d3ee;
+}
+
+/* PROJECTS */
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+    gap:30px;
+}
+
+.project{
+    background:#0d162b;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid #1b2b45;
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+    border-color:#22d3ee;
+}
+
+.project h3{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.project h4{
+    color:#22d3ee;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.project p{
+    color:#d1d5db;
+    line-height:1.9;
+    font-size:20px;
+}
+
+/* EXPERIENCE */
+
+.experience-box{
+    background:#0d162b;
+    padding:40px;
+    border-radius:20px;
+    border:1px solid #1b2b45;
+}
+
+.experience-box h3{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.experience-box h4{
+    color:#22d3ee;
+    margin-bottom:25px;
+    font-size:25px;
+}
+
+.experience-box ul{
+    padding-left:20px;
+    line-height:2;
+    color:#d1d5db;
+    font-size:21px;
+}
+
+/* CONTACT */
+
+.contact-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.contact-box{
+    background:#0d162b;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #1b2b45;
+}
+
+.contact-box h3{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.contact-box p{
+    font-size:22px;
+    color:#d1d5db;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #1b2b45;
+    color:#94a3b8;
+    font-size:20px;
+}
+
+.profile-link{
+    color:#22d3ee;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.profile-link:hover{
+    color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:55px;
+    }
+
+    .hero-text p{
+        font-size:20px;
+    }
+
+    .profile-card{
+        width:100%;
+    }
+
+    .name{
+        font-size:40px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <h1>Abhishek Aloor</h1>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li> <a href="resume.pdf" target="_blank">Resume</a> </li>
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h3>JAVA FULL STACK DEVELOPER</h3>
+
+        <h1>Building Modern & Scalable Web Applications</h1>
+
+        <p>
+            Passionate Computer Science Engineering student skilled in Java Full Stack
+            Development, Spring Boot, React, MySQL, Testing and DSA.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+
+        <a href="#contact" class="btn btn2">Contact Me</a>
+
+    </div>
+
+    <!-- PROFILE CARD -->
+
+    <div class="profile-card">
+
+        <div class="circle">
+            <img src="abhishek.jpg" alt="Profile Photo">
+        </div>
+
+        <h2 class="name">Abhishek Aloor</h2>
+
+        <p class="role">
+            Java Full Stack Developer
+        </p>
+
+        <p class="desc">
+            Focused on backend development,
+            frontend UI design,
+            automation testing,
+            and problem solving.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+        I am pursuing B.E. in Computer Science and Engineering at Sambhram Institute of Technology.
+        I completed Java Full Stack training at Global Quest Technologies where I learned
+        Core Java, Advanced Java, Spring Boot, Hibernate, React, MySQL,
+        Testing, and Data Structures & Algorithms.
+        <br><br>
+        I also completed internship training at Glow Logics Pvt. Ltd.
+        as a Java Full Stack Intern.
+    </p>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">Java</div>
+        <div class="skill">Spring Boot</div>
+        <div class="skill">Hibernate</div>
+        <div class="skill">React JS</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">REST APIs</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Testing</div>
+        <div class="skill">DSA</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project">
+
+            <h3>OnlineBook Store</h3>
+
+            <h4>React | Spring Boot | MySQL | Razorpay</h4>
+
+            <p>
+                Developed a full-stack OnlineBook Store application with secure authentication,
+                CRUD operations, cart management, order tracking, and Razorpay payment integration.
+                Implemented REST APIs using Spring Boot and connected MySQL database.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>Temperature Converter</h3>
+
+            <h4>Java | Swing</h4>
+
+            <p>
+                Designed a Java Swing application to convert temperatures between Celsius,
+                Fahrenheit, and Kelvin using OOP concepts and GUI development.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>Word Translation App</h3>
+
+            <h4>HTML | CSS | JavaScript</h4>
+
+            <p>
+                Built a multilingual word translation application using APIs
+                with responsive UI and efficient API handling.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>Vaahanam Vehicle Registration System</h3>
+
+            <h4>HTML | CSS | JavaScript</h4>
+
+            <p>
+                Developed a vehicle registration portal using local storage
+                to add, manage, and remove vehicle records.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-box">
+
+        <h3>Glow Logics Pvt. Ltd.</h3>
+
+        <h4>Java Full Stack Intern</h4>
+
+        <ul>
+            <li>Worked on Java Full Stack applications and backend development.</li>
+            <li>Implemented CRUD operations and REST APIs.</li>
+            <li>Collaborated with developers for debugging and feature implementation.</li>
+            <li>Improved understanding of real-world software development workflows.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+    <h3>Email</h3>
+
+    <p style="margin-top:20px;">
+
+        <a href="mailto:abhishekokali100@gmail.com" class="profile-link">
+            abhishekokali100@gmail.com
+        </a>
+
+    </p>
+
+</div>
+
+        <div class="contact-box">
+            <h3>Phone</h3>
+            <p>+91 9535554218</p>
+        </div>
+
+        <div class="contact-box">
+           <div class="contact-box">
+
+    <h3>Profiles</h3>
+
+    <p style="margin-top:20px;">
+
+        <a href="https://www.linkedin.com/in/abhishek-aloor-14b15b282?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="profile-link">
+            LinkedIn
+        </a>
+
+        <br><br>
+
+        <a href="https://github.com/Abhishek447-ai" target="_blank" class="profile-link">
+            GitHub
+        </a>
+
+    </p>
+
+</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Abhishek Aloor | Java Full Stack Developer
+</footer>
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+function showSections() {
+
+    sections.forEach(section => {
+
+        const top = window.scrollY;
+        const offset = section.offsetTop - 500;
+        const height = section.offsetHeight;
+
+        if(top >= offset){
+
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0px)";
+
+        }
+
+    });
+
+}
+
+sections.forEach(section => {
+
+    section.style.opacity = "1";
+    section.style.transform = "translateY(0px)";
+    section.style.transition = "1s";
+
+});
+
+window.addEventListener("scroll", showSections);
+
+showSections();
+
+</script>
+
+</body>
+</html>
